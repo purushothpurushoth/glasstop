@@ -1,0 +1,7 @@
+<span
+  *ngFor="let chip of chips; let i = index"
+  [class.selected-chip]="chip?.isSelected"
+  (click)="onChipSelect($event.target, i)"
+  class="chip ms-2 px-2 py-2"
+  >{{ chip?.label }}</span
+>

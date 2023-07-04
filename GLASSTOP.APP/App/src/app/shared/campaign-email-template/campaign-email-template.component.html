@@ -1,0 +1,57 @@
+<div class="campaign-container position-relative p-5">
+  <div class="campaign-desc col-9 fs-22 f-bold">
+    {{ user?.firstName || "Hi" }}, we have a readymade Email campaign that’s proven to
+    solicit maximum responses. Review the campaign & make edits as you may deem
+    fit 👇
+  </div>
+  <form [formGroup]="campaignForm" (ngSubmit)="startCampaign()">
+    <div class="campaign-input row mt-4 justify-content-between">
+      <div class="col-4">
+        <label class="lh-24 fs-14 d-block color-grey" for="campaignName"
+          >Campaign name:</label
+        >
+        <input
+          type="text"
+          class="mt-2 px-3 py-2 fs-14 w-100"
+          formControlName="campaignName"
+          [class.input-error] = "campaignForm.get('campaignName')!.touched && campaignForm.get('campaignName')!.invalid"
+          id="campaignName"
+          #campaignName
+        />
+      </div>
+      <div class="col-auto">
+        <p class="m-0 fs-12" [class.invisible]="!campaignName.value">
+          Great, the campign looks fine!
+        </p>
+        <button
+          type="submit"
+          class="btn btn-primary btn-lg fs-14 mt-2 text-center"
+          [disabled]="campaignForm.invalid"
+        >
+          Next step to Add Employees
+        </button>
+      </div>
+    </div>
+    <div class="campaign-info my-4 row fs-14">
+      <div class="col-auto fw-600 pe-0">Total :</div>
+      <div class="col-8 ps-1 color-grey">
+        3 Emails (Over a period of 8 days, we will send 3 emails to each
+        employee requesting feedback via the links provided in the emails.)<a
+          class="ps-1 text-decoration-none"
+          href=""
+          ><i class="bi bi-eye-fill px-1"></i>Preview feedback form</a
+        >
+      </div>
+    </div>
+    <glasstop-email-template
+      *ngFor="let template of emailTemplates; let i = index"
+      [index]="i"
+      [template]="template"
+      class="mt-2"
+    ></glasstop-email-template>
+  </form>
+  <i
+    class="scroll-up position-absolute bi bi-arrow-up-circle"
+    (click)="scrollToTop()"
+  ></i>
+</div>

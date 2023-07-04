@@ -1,0 +1,11 @@
+{
+  "web": {
+    "client_id": "506026038229-62afmtpq48v4ke3i0bttp8r55ridmn1o.apps.googleusercontent.com",
+    "project_id": "glasstop-sso-382506",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_secret": "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",
+    "javascript_origins": ["http://localhost", "http://localhost:4200"]
+  }
+}

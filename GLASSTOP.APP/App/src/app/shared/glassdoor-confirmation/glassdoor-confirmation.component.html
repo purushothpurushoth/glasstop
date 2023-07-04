@@ -1,0 +1,84 @@
+<div class="glassdoor-panel-container container p-5">
+  <div class="glass-door-container ps-3 pe-3">
+    <div>
+      <span class="color-grey lh-10 fs-12 d-block">2/3</span>
+      <span class="heading fs-22 fw-bold d-block"
+        >Provide your Glassdoor page URL</span
+      >
+      <span class="color-grey lh-10 fs-14 description font-grey">
+        First things first. Can you help us with the correct link to your
+        Glassdoor page?
+      </span>
+    </div>
+    <div class="url-check-container pt-4">
+      <form [formGroup]="glassDoorUrlForm" (ngSubmit)="fetchGlassdoorImage()">
+        <label class="lh-24 fs-14 d-block"
+          >Paste your Glassdoor page URL here</label
+        >
+        <input
+          type="text"
+          class="mt-2 px-3 py-2 fs-14"
+          formControlName="companyGlassdoorURL"
+          [class.input-error]="glassDoorUrlForm.get('companyGlassdoorURL')!.touched && glassDoorUrlForm.get('companyGlassdoorURL')!.invalid"
+          #companyGlassdoorURL
+        />
+        <button
+          type="submit"
+          class="btn btn-primary btn-lg fs-14 ms-3 text-center"
+          (click)="fetchGlassdoorImage()"
+          [disabled]="companyGlassdoorURL.value === _companyGlassdoorURL || !companyGlassdoorURL.value"
+        >
+          Check my Glassdoor page
+        </button>
+      </form>
+    </div>
+    <div class="pt-4 pb-1">
+      <span
+        class="lh-24 fs-14 d-block pb-2"
+        [class.disabled]="!template?.glassdoorPage"
+      >
+        Preview of your glassdoor page
+      </span>
+      <div
+        *ngIf="template?.glassdoorPage ; else spinnerContainer"
+        class="image-container p-3 overflow-hidden"
+      >
+        <img
+          class="cursor-pointer"
+          [src]="template?.glassdoorPage || ''"
+          alt="Glassdoor confirmation" 
+        />
+      </div>
+      <ng-template #spinnerContainer>
+        <div
+          class="pre-loader-container d-flex align-items-center justify-content-center"
+        >
+          <div class="loading-wrapper" *ngIf="isLoading">
+            <div class="d-flex justify-content-center">
+              <div class="spinner-border" role="status"></div>
+            </div>
+            <div class="mt-3 text-center">
+              Please hold on, We're finding your<br />
+              Glassdoor page now..
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+  <div
+    class="text-center button-section pt-4"
+    [class.invisible]="!template?.glassdoorPage"
+  >
+    <button
+      type="button"
+      class="btn mx-auto btn-primary mt-2 fs-14 text-center"
+      [routerLink]="isClaimed ? '../glasstop-agenda' : '../claim-procedure'"
+    >
+      Yes, this is the right one
+    </button>
+    <div class="mt-2 fs-14 text-center">
+      Different page? Please paste the correct URL above again
+    </div>
+  </div>
+</div>

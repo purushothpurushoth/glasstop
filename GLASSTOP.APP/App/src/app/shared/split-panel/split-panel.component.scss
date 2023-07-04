@@ -1,0 +1,180 @@
+@import "./../../../scss/colors.scss";
+
+.panel-container {
+  background: $white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px $box-shadow-black;
+}
+
+.profile-pic-container {
+  img {
+    border: 1px solid $grey;
+    border-radius: 50%;
+  }
+}
+
+.update-pic-container {
+  .action-buttons {
+    position: relative;
+
+    label.btn-outline-secondary {
+      font-size: 12px;
+      padding-left: 30px !important;
+    }
+
+    .btn-outline-secondary {
+      font-size: 12px;
+    }
+
+    .bi-upload {
+      font-size: 14px;
+      font-weight: 800;
+      top: 2px;
+      left: 8px;
+      position: absolute;
+    }
+
+    label,
+    button {
+
+      &:hover,
+      &:active {
+        background: $disabled-btn-color;
+        border-color: $icon-blue;
+      }
+    }
+  }
+}
+
+.left-container {
+  border-right: 2px solid $border-grey;
+  min-height: 740.5px;
+
+  .progress-container {
+    color: $med-cement-grey;
+  }
+
+  .divider {
+    width: 90%;
+    border-bottom: 1px solid $border-grey;
+  }
+
+  &.ceo-invite {
+    .ceo-message {
+      color: $light-cement-grey;
+    }
+
+    .ceo-email {
+      height: 44px;
+      border: 1px solid $border-grey;
+
+      &:focus {
+        outline: none;
+      }
+
+      &::placeholder {
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+
+    .request-button {
+      background-color: $disabled-btn-color;
+      border: none;
+      height: 44px;
+    }
+
+    .skip-button {
+      height: 44px;
+      border: 1px solid $icon-blue;
+
+      &:hover {
+        background-color: $icon-blue;
+      }
+    }
+  }
+}
+
+.form-control,
+.form-select {
+  border-color: $border-grey;
+  font-size: 13px;
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  &:disabled {
+    color: #1D1D1D66;
+    background-color: $white;
+    border-color: $border-grey;
+  }
+}
+
+.heading {
+  font-weight: bold;
+}
+
+.form-label {
+  color: $font-grey;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.right-container {
+  .app-catch-phrase {
+    color: $light-cement-grey;
+    line-height: 27px;
+  }
+
+  .star-ratings {
+    i {
+      color: $gold;
+    }
+  }
+
+  .director-detail {
+    .name {
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .designation {
+      font-size: 12px;
+      line-height: 12px;
+      opacity: 0.8;
+    }
+  }
+}
+
+/***********************************MEDIA QUERY ************************/
+
+@media (min-width: 800px) and (max-width: 1100px) {
+  .fs-20 {
+    font-size: 18px;
+  }
+
+  .update-pic-container {
+    .heading {
+      margin-top: 5px;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .left-container {
+    width: auto !important;
+    display: block !important;
+    min-height: 200px;
+    padding-top: 40px !important;
+    padding-bottom: 10px !important;
+  }
+
+  .right-container {
+    width: auto !important;
+    display: block !important;
+    float: none !important;
+    padding-top: 10px !important;
+    padding-bottom: 30px !important;
+  }
+}

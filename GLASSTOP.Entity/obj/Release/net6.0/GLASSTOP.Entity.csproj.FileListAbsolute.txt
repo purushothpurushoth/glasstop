@@ -1,0 +1,12 @@
+C:\Users\admin\source\repos\Glasstop_Source\Glasstop\GLASSTOP.Entity\bin\Release\net6.0\GLASSTOP.Entity.deps.json
+C:\Users\admin\source\repos\Glasstop_Source\Glasstop\GLASSTOP.Entity\bin\Release\net6.0\GLASSTOP.Entity.dll
+C:\Users\admin\source\repos\Glasstop_Source\Glasstop\GLASSTOP.Entity\bin\Release\net6.0\ref\GLASSTOP.Entity.dll
+C:\Users\admin\source\repos\Glasstop_Source\Glasstop\GLASSTOP.Entity\bin\Release\net6.0\GLASSTOP.Entity.pdb
+C:\Users\admin\source\repos\Glasstop_Source\Glasstop\GLASSTOP.Entity\obj\Release\net6.0\GLASSTOP.Entity.csproj.AssemblyReference.cache
+C:\Users\admin\source\repos\Glasstop_Source\Glasstop\GLASSTOP.Entity\obj\Release\net6.0\GLASSTOP.Entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\source\repos\Glasstop_Source\Glasstop\GLASSTOP.Entity\obj\Release\net6.0\GLASSTOP.Entity.AssemblyInfoInputs.cache
+C:\Users\admin\source\repos\Glasstop_Source\Glasstop\GLASSTOP.Entity\obj\Release\net6.0\GLASSTOP.Entity.AssemblyInfo.cs
+C:\Users\admin\source\repos\Glasstop_Source\Glasstop\GLASSTOP.Entity\obj\Release\net6.0\GLASSTOP.Entity.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\Glasstop_Source\Glasstop\GLASSTOP.Entity\obj\Release\net6.0\GLASSTOP.Entity.dll
+C:\Users\admin\source\repos\Glasstop_Source\Glasstop\GLASSTOP.Entity\obj\Release\net6.0\ref\GLASSTOP.Entity.dll
+C:\Users\admin\source\repos\Glasstop_Source\Glasstop\GLASSTOP.Entity\obj\Release\net6.0\GLASSTOP.Entity.pdb

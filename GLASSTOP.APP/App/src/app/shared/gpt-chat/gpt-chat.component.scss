@@ -1,0 +1,58 @@
+@import "./../../../scss/colors.scss";
+
+.chat-container {
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px $box-shadow-black;
+  background: $white;
+  height: 80vh;
+  .scroll-container {
+    max-height: 80%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    .message {
+      border-top: 1px solid $border-grey;
+      border-bottom: 1px solid $border-grey;
+    }
+  }
+
+  .chat-footer {
+    left: 0;
+    bottom: 0;
+    border-top: 1px solid $border-grey;
+  }
+  .new-chat {
+    input {
+      border-radius: 10px;
+      border: 1px solid $border-grey;
+      color: $font-black;
+      &:focus-visible {
+        outline: none;
+      }
+    }
+    .bi-send-fill {
+      right: 30px;
+      top: 12px;
+      color: $grey;
+      cursor: pointer;
+      &:before {
+        transform: rotate(45deg);
+      }
+    }
+  }
+  .bi-hourglass {
+    top: 0;
+    left: 0;
+  }
+
+  .assistant {
+    background: $bg-grey;
+  }
+
+  .green {
+    color: $green !important;
+  }
+
+  .grey {
+    color: $font-black;
+  }
+}

@@ -1,0 +1,77 @@
+<div class="panel-container h-100">
+  <div class="container h-100 p-5">
+    <div class="container-fluid row p-0 header">
+      <div class="heading fs-22 fw-bold">
+        Hey {{ user?.firstName }}, we noticed that your Glassdoor page is still
+        unclaimed.
+      </div>
+      <div class="lh-10 fs-14 description f-md-grey">
+        We’d highly recommend you to go and claim your employer page on
+        Glassdoor. It’s complete FREE & here’s how you can do this.
+      </div>
+    </div>
+    <div class="row col-4 fs-16 text-center fw-600 mt-5 mx-auto">
+      Watch our video to learn how to claim your Glassdoor page and improve your
+      ratings.
+    </div>
+
+    <div class="row middle-container pt-3">
+      <div class="right-down-arrow-container p-0 col-4">
+        <img [src]="rightDownArrow" alt="Right Arrow" />
+      </div>
+      <div class="col-4 p-0">
+        <img
+          class="thumbnail w-100"
+          [src]="sampleImageVideo"
+          alt="You Tube Video"
+          (click)="onLoadVideoInModal()"
+        />
+      </div>
+      <div class="col-4 right-content pt-3">
+        <ul class="list-unstyled px-3">
+          <div class="heading mb-3 fw-bold fs-17">
+            3 reasons why you should claim your Glassdoor page 👇
+          </div>
+          <li class="p-3 pb-0 d-inline-flex">
+            <i class="bi bi-check-circle-fill fs-20"></i>
+            <div class="text-justify fs-13 ms-2">
+              Bad reviews with an unclaimed page looks really lazy
+            </div>
+          </li>
+          <li class="p-3 pb-0 d-inline-flex">
+            <i class="bi bi-check-circle-fill fs-20"></i>
+            <div class="text-justify fs-13 ms-2">
+              Glassdoor page and all your reviews will rank on high on Google
+            </div>
+          </li>
+          <li class="p-3 pb-0 d-inline-flex">
+            <i class="bi bi-check-circle-fill fs-20"></i>
+            <div class="text-justify fs-13 ms-2">
+              Improve the look of the page, access stats & get updates
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="text-center pt-5 button-section">
+      <div class="row col-4 mx-auto px-3">
+        <button
+          type="button"
+          class="btn py-2 fs-14 btn-primary"
+          [routerLink]="'../glasstop-agenda'"
+        >
+          Thanks! I’ve claimed my Glassdoor page
+        </button>
+      </div>
+      <div class="row col-4 mx-auto mt-3 px-3">
+        <button
+          type="button"
+          class="btn fs-14 btn-outline-primary fw-bold"
+          [routerLink]="'../glasstop-agenda'"
+        >
+          I'll do it later
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

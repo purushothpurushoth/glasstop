@@ -1,0 +1,18 @@
+<div class="panel p-3">
+  <div class="app-logo-container d-flex py-2 p-1 rounded">
+    <img
+      src="./../../../assets/google-logo.svg"
+      class="mx-auto"
+      width="30px"
+      height="30px"
+      alt="logo"
+    />
+  </div>
+  <div
+    *ngFor="let menu of panelMenus"
+    class="icon-container d-flex m-0 my-3"
+    [routerLink]="menu.routeUrl"
+  >
+    <i class="bi mx-auto fs-20 rounded" [ngClass]="menu.icon"></i>
+  </div>
+</div>

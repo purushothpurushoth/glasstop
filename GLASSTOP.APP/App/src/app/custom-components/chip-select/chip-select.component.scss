@@ -1,0 +1,10 @@
+@import "./../../../scss/colors.scss";
+
+.chip {
+  border: 1px solid $border-grey;
+  border-radius: 8px;
+  cursor: pointer;
+  &.selected-chip {
+    background: $light-blue;
+  }
+}

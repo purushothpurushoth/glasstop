@@ -1,0 +1,8 @@
+<div class="rating-container d-flex align-items-center justify-content-center">
+  <span class="px-2" *ngIf="canShowNumeric" [ngStyle]="getRatingsStyles()">{{ ratings }}</span
+  ><i
+    *ngFor="let star of starRatings"
+    [ngStyle]="star.style"
+    class="d-inline bi bi-star-fill pe-1 fs-16"
+  ></i>
+</div>

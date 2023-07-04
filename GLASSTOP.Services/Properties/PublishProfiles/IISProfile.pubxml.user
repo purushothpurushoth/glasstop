@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <History>True|2023-06-16T08:45:03.8696556Z;True|2023-06-16T14:14:23.9152827+05:30;True|2023-06-16T13:27:27.1301094+05:30;True|2023-06-16T13:25:32.5104606+05:30;True|2023-06-16T13:23:35.8905483+05:30;True|2023-06-16T13:20:27.0533715+05:30;True|2023-06-16T13:17:54.1821912+05:30;</History>
+    <_PublishTargetUrl>C:\GLASSTOP Dployment\Service</_PublishTargetUrl>
+  </PropertyGroup>
+</Project>

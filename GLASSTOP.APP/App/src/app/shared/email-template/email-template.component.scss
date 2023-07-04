@@ -1,0 +1,164 @@
+@import "./../../../scss/colors.scss";
+
+.template-container {
+  border: 1px solid $border-grey;
+  background: $white;
+  border-radius: 10px;
+
+  .template-head {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom: 1px solid $border-grey;
+    background: $header-bg;
+
+    .mail-icon {
+      background: $light-blue;
+      border-radius: 35%;
+
+      i {
+        color: $icon-blue;
+      }
+    }
+
+    .desc {
+      color: $font-grey;
+    }
+  }
+
+  .template-body {
+    .email-subject .subject-wrapper {
+      border: 1px solid $border-grey;
+      border-radius: 10px;
+
+      input {
+        width: 80%;
+        border-radius: 10px;
+      }
+
+      select {
+        border-radius: 10px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-left: 1px solid $border-grey !important;
+        display: inline-block;
+        width: 20%;
+
+        &:focus {
+          box-shadow: none;
+        }
+      }
+    }
+
+    .content-container-error {
+      border: 1px solid $red;
+      border-bottom-left-radius: 9px;
+      border-bottom-right-radius: 9px;
+    }
+
+    .email-body {
+      .body-container {
+        border: 1px solid $border-grey;
+        border-radius: 10px;
+
+        .color-blue {
+          color: $icon-blue;
+        }
+
+        .variables-container {
+          border-top: 1px solid $border-grey;
+          border-bottom: 1px solid $border-grey !important;
+
+          button {
+            background-color: $white;
+            border: 1px solid $border-grey;
+            border-radius: 7px;
+
+            &:hover {
+              box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            }
+          }
+        }
+
+        input {
+          border: none;
+          border-top: 1px solid $border-grey;
+          border-bottom-left-radius: 10px !important;
+          border-bottom-right-radius: 10px !important;
+        }
+      }
+
+      .email-content:focus-visible {
+        outline: none;
+      }
+    }
+  }
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+input {
+  border: 1px solid $border-grey;
+  font-size: 14px;
+  border-radius: 8px;
+  width: -webkit-fill-available;
+
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
+
+  &.disabled {
+    color: $med-cement-grey;
+  }
+}
+
+.floating-button {
+  .menu-button {
+    padding: 3px 7px;
+    background-color: $white;
+    color: $font-grey;
+    transition: .3s ease-in-out;
+
+    &:hover {
+      background-color: $floating-button;
+    }
+  }
+}
+
+
+/************************************************************* MEDIA QUERY  ****************************************************/
+
+@media (max-width: 800px) {
+  .fs-12 {
+    font-size: 10px;
+  }
+
+  .fs-14 {
+    font-size: 12px;
+  }
+
+  .fs-16 {
+    font-size: 14px;
+  }
+
+  label {
+    font-size: 16px;
+  }
+
+  input,
+  select {
+    font-size: 12px;
+  }
+
+  .subject-wrapper {
+    input {
+      width: 75% !important;
+    }
+
+    select {
+      width: 25% !important;
+    }
+  }
+}

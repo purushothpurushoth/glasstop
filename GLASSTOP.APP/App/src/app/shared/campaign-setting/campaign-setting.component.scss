@@ -1,0 +1,60 @@
+@import "./../../../scss/colors.scss";
+
+.container {
+  border: 1px solid $border-grey;
+  background: $white;
+  border-radius: 10px;
+  padding: 50px 60px 80px 60px;
+  min-height: 800px;
+
+  .start-campaign-button {
+    padding: 9px 55px;
+    border-radius: 10px;
+  }
+
+  .dates {
+    width: 750px;
+    height: 46px;
+    border: 1px solid $border-grey;
+    border-radius: 6px;
+    padding: 10px;
+  }
+
+  .timezone-dropdown,
+  .time-dropdown {
+    height: 38px;
+    width: 400px;
+    border: 1px solid $border-grey;
+
+    &:focus {
+      box-shadow: none;
+      border-color: $icon-blue;
+    }
+  }
+
+  .time-dropdown {
+    width: 138px;
+    height: 48px;
+    padding-left: 38px;
+  }
+
+  .clock-position {
+    left: 24px;
+    top: 12px;
+  }
+}
+
+/***************Media Query***************************/
+@media (max-width: 769px) {
+  .container {
+    .dates {
+      width: 500px;
+      height: 80px;
+
+      div {
+        margin-top: 4px;
+      }
+    }
+  }
+
+}

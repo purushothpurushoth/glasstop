@@ -1,0 +1,13 @@
+@import "./../../../scss/colors.scss";
+
+.app-logo-container {
+  background: $shaded-navy-blue;
+}
+
+.icon-container {
+  i {
+    background: $shaded-navy-blue;
+    color: white;
+    padding: 10px 15px;
+  }
+}

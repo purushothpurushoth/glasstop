@@ -1,0 +1,5 @@
+# Visual Studio Code
+.vs/*
+GLASSTOP.APP/App/.vscode
+GLASSTOP.APP/App/.angular/cache
+GLASSTOP.APP/App/node_modules

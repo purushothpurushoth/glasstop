@@ -1,0 +1,110 @@
+<div class="emplist-container br-10">
+    <div class="emplist-header">
+        <div class="d-flex justify-content-between">
+            <div class="fs-22 f-bold mb-3">Upload your employees list</div>
+            <div>
+                <button class="btn btn-primary mb-3 fs-14" [disabled]="!isEmpListLoaded">
+                    Continue to campaign settings
+                </button>
+            </div>
+        </div>
+        <div class="d-flex">
+            <div class="w-50">
+                <div class="d-flex align-items-center f-bold mb-2 fs-14">
+                    <div class="upload-img br-10 me-2" (click)="focusUploadSection()">
+                        <i class="bi bi-file-earmark-arrow-up-fill fs-17"></i>
+                    </div>
+                    <div>Upload your file</div>
+                </div>
+                <div class="mb-3 fs-12 f-grey">
+                    Upload a csv file to import employees from the sheet/excel file. Drag
+                    and drop the file anywhere on the screen to start uploading.
+                </div>
+            </div>
+            <div class="w-50 d-flex justify-content-end align-items-end">
+                <div class="download-btn position-relative mb-3">
+                    <i class="bi bi-download position-absolute fs-16"></i>
+                    <a href="assets/excel/Sample_Excel.xlsx" download>
+                        <label class="btn btn-outline-secondary fs-14">
+                            {{isEmpListLoaded ? "Sample format" : "Download sample template"}}
+                        </label>
+                    </a>
+                </div>
+                <div *ngIf="isEmpListLoaded" class="upload-btn position-relative mb-3 ms-2">
+                    <i class="bi bi-file-earmark-arrow-up-fill position-absolute fs-17"></i>
+                    <label for="empFiles" class="btn btn-outline-secondary fs-14">Upload</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-container *ngIf="!isLoading; else spinnerContainer">
+        <div *ngIf="isEmpListLoaded">
+            <glasstop-data-table 
+                [data]="employeeList" 
+                [columns]="tableColumns" 
+                [detail]="{
+                    searchTotalCount: searchTotalCount,
+                    id: 'campaignUserId',
+                    placeholder: 'Search by first name or email',
+                    listName: 'employee(s)'
+                }" 
+                [isTableLoading]="isTableLoading" 
+                [paginationId]="'paginationId-1'"
+                (emitPageLoad)="loadEmployeeListOnPagination($event)"
+                (emitIdsToRemove)="removeEmployees($event)"
+                (emitSearchText)="loadEmployeeListOnSearch($event)">
+            </glasstop-data-table>
+        </div>
+        <div *ngIf="!isEmpListLoaded" class="upload-section-container br-10 d-flex">
+            <div class="w-50 upload-container" (dragover)="onDragOver($event)" (drop)="onDropSuccess($event)">
+                <div class="text-center">
+                    <img src="./../../../assets/employee-upload-logo.gif" height="200px" />
+                </div>
+                <label for="empFiles" class="upload-section-label">
+                    <div class="upload-section cursor-pointer py-4 px-2 text-center"
+                        [ngClass]="{ uploadSectionFocus: isUploadSectionFocused }">
+                        <div class="mb-3">
+                            <i class="bi bi-upload p-2"></i>
+                        </div>
+                        <div class="upload-link f-grey fw-500 fs-14">
+                            <span>Click to upload</span> or drag and drop
+                        </div>
+                        <div class="fs-12 f-grey pt-2">File supported: Csv or Excel</div>
+                        <div class="fs-12 f-grey pt-1">(maximum size 25MB)</div>
+                    </div>
+                </label>
+            </div>
+            <div class="w-50 upload-steps p-4 d-flex flex-column justify-content-center">
+                <div class="fs-20 f-bold">
+                    Here's where you're at and what to do next:
+                </div>
+                <div class="pt-3 fs-13">
+                    <span class="fw-500">Step 1:</span> Download the template file provided.
+                </div>
+                <div class="pt-3 fs-13">
+                    <span class="fw-500">Step 2:</span> Fill in the employee names and
+                    email addresses in the template, following the formatting guidelines
+                    provided.
+                </div>
+                <div class="pt-3 fs-13">
+                    <span class="fw-500">Step 3:</span> Save the completed template on
+                    your computer in either CSV or Excel format.
+                </div>
+                <div class="pt-3 fs-13">
+                    <span class="fw-500">Step 4:</span> Click on the "Upload" button to
+                    select the saved file.
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>
+<input type="file" id="empFiles" class="invisible" (change)="onChange($event)" />
+<ng-template #spinnerContainer>
+    <div class="pre-loader-container d-flex align-items-center justify-content-center">
+        <div class="loading-wrapper">
+            <div class="d-flex justify-content-center">
+                <div class="spinner-border" role="status"></div>
+            </div>
+        </div>
+    </div>
+</ng-template>

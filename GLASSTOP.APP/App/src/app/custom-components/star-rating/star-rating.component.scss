@@ -1,0 +1,9 @@
+.rating-container {
+  height: 30px;
+  .bi-star-fill {
+    color: grey;
+    display: block;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

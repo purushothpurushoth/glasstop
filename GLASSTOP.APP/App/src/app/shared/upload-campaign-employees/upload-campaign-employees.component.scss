@@ -1,0 +1,110 @@
+@import "./../../../scss/colors.scss";
+
+.emplist-container {
+    border: 1px solid $border-grey;
+    background: $white;
+    padding: 40px 30px 80px 30px;
+
+    button:disabled {
+        background: $grey;
+        border-color: $grey;
+    }
+
+    .upload-img {
+        background: $light-blue;
+        height: 28px;
+        width: 28px;
+        padding: 2px 0 0 6px;
+
+        i {
+            color: $icon-blue;
+        }
+    }
+
+    .download-btn, .upload-btn {
+
+        label.btn-outline-secondary {
+          padding: 6px 12px 6px 34px;
+        }
+
+        .bi-download, .bi-file-earmark-arrow-up-fill {
+          top: 6px;
+          left: 8px;
+        }
+
+        .bi-download:hover {
+            color: $font-black !important;
+        }
+    }
+
+    .download-btn:hover .bi-download {
+        color: $white;
+    }
+
+    .upload-btn {
+        .bi-file-earmark-arrow-up-fill {
+            color: $icon-blue;
+        }
+
+        label {
+            border: 1px solid $icon-blue;
+            color: $icon-blue;
+        }
+
+        .btn:hover {
+            background-color: $bg-grey !important;
+        }
+    }
+
+    .upload-section-container {
+        border: 1px solid $bg-grey;
+
+        .upload-section-label {
+            display: block !important;
+            margin: 10px 30px 50px 30px;
+            user-select: none;
+        }
+
+        .upload-section {
+            background-color: $bg-grey;
+            border: 1px dashed $icon-blue;
+
+            i {
+                background-color: $white !important;
+                color: $icon-blue;
+                text-shadow: 1px 1px;
+                border-radius: 50%;
+            }
+
+            .upload-link span {
+                color: $icon-blue !important;
+            }
+        }
+
+        .uploadSectionFocus {
+            animation-name: bg-color-effect;
+            animation-duration: 2s;
+        }
+
+        .upload-steps {
+            background-color: $bg-grey;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+    }
+}
+
+@keyframes bg-color-effect {
+    from {background-color: $light-blue-2;}
+    to {background-color: $bg-grey;}
+}
+
+.pre-loader-container {
+    min-height: 250px;
+    .spinner-border {
+      --bs-spinner-width: 4rem;
+      --bs-spinner-height: 4rem;
+      --bs-spinner-border-width: 0.4rem;
+      color: $loader-blue;
+    }
+}

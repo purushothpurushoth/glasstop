@@ -1,0 +1,47 @@
+<div class="chat-container position-relative">
+  <div #scrollContainer class="scroll-container pe-0">
+    <div class="meta-info row mb-3">
+      <i class="bi bi-robot p-0 text-center fs-48 green"></i>
+      <div class="text-center p-0 f-bold fs-24">
+        Hey buddy<br />
+        Your feedback is more important for us!
+      </div>
+    </div>
+    <div
+      class="message row p-0 m-0"
+      [ngClass]="message.role"
+      *ngFor="let message of messages"
+    >
+      <i
+        class="bi bi-robot col-auto ps-5 pt-4 pe-0 fs-18 green"
+        *ngIf="message.role === 'assistant'"
+      ></i
+      ><i
+        class="bi bi-person-circle col-auto ps-5 pt-4 pe-0 fs-18 grey"
+        *ngIf="message.role === 'user'"
+      ></i>
+      <div class="content p-4 col-11" *ngIf="message.role !== 'system'">
+        {{ message.content }}
+      </div>
+    </div>
+  </div>
+  <div class="position-absolute col-12 chat-footer">
+    <div class="col-11 p-4 m-0 mx-5">
+      <div
+        class="new-chat pe-3 col-auto mx-auto row position-relative m-0 mx-5 p-0"
+      >
+        <input
+          #newText
+          type="text"
+          class="w-100 p-3"
+          placeholder="Send your feedback!"
+          (keyup.enter)="sendMessage(newText.value) && (newText.value = '')"
+        /><i
+          class="bi col-auto bi-send-fill position-absolute fs-22"
+          [class.green]="newText.value"
+          (click)="sendMessage(newText.value) && (newText.value = '')"          
+        ></i>
+      </div>
+    </div>
+  </div>
+</div>

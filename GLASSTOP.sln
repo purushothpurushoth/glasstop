@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GLASSTOP.APP", "GLASSTOP.APP\GLASSTOP.APP.csproj", "{9D380558-3A26-4E0A-82F6-AC72159D886E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GLASSTOP.Services", "GLASSTOP.Services\GLASSTOP.Services.csproj", "{A74E6DF4-65CB-4A23-82E1-5EEDF76BB7C9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GLASSTOP.BAL", "GLASSTOP.BAL\GLASSTOP.BAL.csproj", "{49EE2AD5-33AB-4A66-9D38-F826F8F923B7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GLASSTOP.DL", "GLASSTOP.DL\GLASSTOP.DL.csproj", "{2988FBEC-E07B-4708-86D9-A3389C0D7959}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GLASSTOP.Entity", "GLASSTOP.Entity\GLASSTOP.Entity.csproj", "{B20434EB-7CD9-4F21-A7D2-0A56A91851C7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GLASSTOP.Utility", "GLASSTOP.Utility\GLASSTOP.Utility.csproj", "{863F3440-80DA-4A46-B284-9B02F24415E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GLASSTOP.BATCHJOB", "GLASSTOP.BATCHJOB\GLASSTOP.BATCHJOB.csproj", "{E3968E44-55B0-406B-87E2-58EEE3A69E66}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9D380558-3A26-4E0A-82F6-AC72159D886E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D380558-3A26-4E0A-82F6-AC72159D886E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D380558-3A26-4E0A-82F6-AC72159D886E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D380558-3A26-4E0A-82F6-AC72159D886E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A74E6DF4-65CB-4A23-82E1-5EEDF76BB7C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A74E6DF4-65CB-4A23-82E1-5EEDF76BB7C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A74E6DF4-65CB-4A23-82E1-5EEDF76BB7C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A74E6DF4-65CB-4A23-82E1-5EEDF76BB7C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49EE2AD5-33AB-4A66-9D38-F826F8F923B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49EE2AD5-33AB-4A66-9D38-F826F8F923B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49EE2AD5-33AB-4A66-9D38-F826F8F923B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49EE2AD5-33AB-4A66-9D38-F826F8F923B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2988FBEC-E07B-4708-86D9-A3389C0D7959}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2988FBEC-E07B-4708-86D9-A3389C0D7959}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2988FBEC-E07B-4708-86D9-A3389C0D7959}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2988FBEC-E07B-4708-86D9-A3389C0D7959}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B20434EB-7CD9-4F21-A7D2-0A56A91851C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B20434EB-7CD9-4F21-A7D2-0A56A91851C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B20434EB-7CD9-4F21-A7D2-0A56A91851C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B20434EB-7CD9-4F21-A7D2-0A56A91851C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{863F3440-80DA-4A46-B284-9B02F24415E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{863F3440-80DA-4A46-B284-9B02F24415E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{863F3440-80DA-4A46-B284-9B02F24415E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{863F3440-80DA-4A46-B284-9B02F24415E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3968E44-55B0-406B-87E2-58EEE3A69E66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3968E44-55B0-406B-87E2-58EEE3A69E66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3968E44-55B0-406B-87E2-58EEE3A69E66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3968E44-55B0-406B-87E2-58EEE3A69E66}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7C0E3696-860B-4171-ABE3-F927D6A53F5C}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,122 @@
+<div class="container p-4">
+  <div class="col-auto f-bold fs-24 text-center my-2">
+    Thank you, Praveen, for sharing your valuable feedback!
+  </div>
+  <div class="col-6 mx-auto fs-16 text-center my-2">
+    Help us improve transparency and provide valuable information to job seekers
+    by sharing your feedback on Glassdoor. Your honest review shapes a better
+    understanding of our organization.
+  </div>
+  <div class="col-6 mx-auto f-bold fs-16 text-center mt-4 mb-2">
+    To leave your feedback on Glassdoor, please click below:
+  </div>
+
+  <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+    <div class="col-2 mx-auto">
+      <button
+        type="submit"
+        class="w-100 submit-btn fs-15 py-2 br-10 mb-3 fw-600"
+        [class.disabled]="feedbackForm.invalid"
+        [disabled]="feedbackForm.invalid"
+      >
+        Submit Review on Glassdoor
+      </button>
+    </div>
+    <div class="col-6 mx-auto p-4 pb-0 br-10 border">
+      <div class="f-bold fs-18 mb-2">
+        Based on your responses, here's a summary of your input:
+      </div>
+      <div class="fs-14 mb-2 fw-600">
+        Overall rating :
+        <glasstop-star-rating
+          class="d-inline-block ms-1"
+          [ratings]="3"
+          [canShowNumeric]="false"
+        ></glasstop-star-rating>
+      </div>
+
+      <div class="border br-8 mb-3" [class.invalid]="!reviewHeadline.value">
+        <div class="border-b opacity-6" [class.invalid]="!reviewHeadline.value">
+          <div class="my-3 mx-2 row">
+            <div class="col-auto fw-600 fs-14">Review Headline</div>
+            <div
+              class="col-auto ms-auto border-blue br-8 px-2 py-1 fw-600 color-blue fs-12 me-1 cursor-pointer"
+              (click)="copyToClipboard(reviewHeadline.value)"
+            >
+              <i class="bi bi-files fs-12 me-2 color-blue"></i>Copy text
+            </div>
+          </div>
+        </div>
+        <input
+          type="text"
+          #reviewHeadline
+          class="w-100 p-3 fs-14"
+          formControlName="reviewHeadline"
+        />
+      </div>
+
+      <div class="border br-8 mb-3" [class.invalid]="!pros.value">
+        <div class="border-b opacity-6" [class.invalid]="!pros.value">
+          <div class="my-3 mx-2 row">
+            <div class="col-auto fw-600 fs-14">Pros</div>
+            <div
+              class="col-auto ms-auto border-blue br-8 px-2 py-1 fw-600 color-blue fs-12 me-1 cursor-pointer"
+              (click)="copyToClipboard(pros.value)"
+            >
+              <i class="bi bi-files fs-12 me-2 color-blue"></i>Copy text
+            </div>
+          </div>
+        </div>
+        <textarea
+          #pros
+          type="input"
+          class="w-100 p-3 fs-14"
+          formControlName="pros"
+        >
+      </div>
+
+
+      
+      <div class="border br-8 mb-3" [class.invalid]="!cons.value">
+        <div class="border-b opacity-6" [class.invalid]="!cons.value">
+          <div class="my-3 mx-2 row">
+            <div class="col-auto fw-600 fs-14">Cons</div>
+            <div
+              class="col-auto ms-auto border-blue br-8 px-2 py-1 fw-600 color-blue fs-12 me-1 cursor-pointer"
+              (click)="copyToClipboard(cons.value)"
+            >
+              <i class="bi bi-files fs-12 me-2 color-blue"></i>Copy text
+            </div>
+          </div>
+        </div>
+        <textarea #cons class="w-100 p-3 fs-14" formControlName="cons"></textarea
+        >
+      </div>
+
+      <div
+        class="border br-8 mb-3"
+        [class.invalid]="!adviceForManagement.value"
+      >
+        <div
+          class="border-b opacity-6"
+          [class.invalid]="!adviceForManagement.value"
+        >
+          <div class="my-3 mx-2 row">
+            <div class="col-auto fw-600 fs-14">Advise for management</div>
+            <div
+              class="col-auto ms-auto border-blue br-8 px-2 py-1 fw-600 color-blue fs-12 me-1 cursor-pointer"
+              (click)="copyToClipboard(adviceForManagement.value)"
+            >
+              <i class="bi bi-files fs-12 me-2 color-blue"></i>Copy text
+            </div>
+          </div>
+        </div>
+        <textarea
+          #adviceForManagement
+          class="w-100 p-3 fs-14"
+          formControlName="adviceForManagement"
+        ></textarea>
+      </div>
+    </div>
+  </form>
+</div>

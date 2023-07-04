@@ -1,0 +1,94 @@
+<form [formGroup]="parentForm">
+  <div class="template-container mb-5">
+    <div class="template-head px-4 py-3">
+      <span class="mail-icon px-2 py-1"
+        ><i class="bi bi-envelope-fill"></i
+      ></span>
+      <span class="px-2 fs-16 f-bold">{{ template?.title }}</span>
+      <span class="px-2 fs-14">{{ template?.timeline?.desc }}</span
+      ><span class="pe-2 fs-14 f-bold">{{ template?.timeline?.day }}</span>
+      <span class="desc fs-12">{{ template?.desc }}</span>
+    </div>
+    <div class="template-body p-4">
+      <div class="email-from">
+        <label for="emailFrom" class="fw-600">From</label>
+        <input
+          type="email"
+          id="emialFrom"
+          class="mt-2 px-3 py-2"
+          formControlName="SenderEmailId"
+          [class.input-error]="parentForm.get('SenderEmailId')!.touched && parentForm.get('SenderEmailId')!.invalid"
+        />
+      </div>
+      <div class="email-subject mt-3">
+        <label for="emailSubject" class="fw-600">Email subject</label
+        ><span class="email-meta fs-14 ps-3">{{ template?.emailMeta }}</span>
+        <div class="subject-wrapper mt-2" 
+          [class.input-error]="parentForm.get('MailSubject')!.touched && parentForm.get('MailSubject')!.invalid"
+        >
+          <input
+            type="text"
+            id="emailSubject"
+            class="py-2 px-3 border-0"
+            formControlName="MailSubject"
+            [class.disabled]="template?.isSubjectDisabled"
+            [readonly]="template?.isSubjectDisabled"
+            (click)="getSubjectCursorPos($event)" 
+            (keyup)="getSubjectCursorPos($event)"
+            (keydown)="keyDownHandlerForSubject($event)"
+          />
+          <select
+            *ngIf="!template?.isSubjectDisabled"
+            class="py-2 form-select border-0 fs-14 text-center"
+            (change)="setVariableInSubject($event)"
+            [disabled]="template?.isSubjectDisabled"
+          >
+            <option value="" selected disabled>Variable</option>
+            <option
+              class="py-2"
+              *ngFor="let variable of template?.variables"
+              [value]="variable"
+            >
+              {{ variable }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="email-body mt-3">
+        <label for="emailBody" class="fw-600">Body</label>
+        <div class="body-container mt-3">
+          <div class="editor-wrapper py-1">
+            <ngx-editor-menu
+              [editor]="editor"
+              [toolbar]="toolbar"
+            ></ngx-editor-menu>
+          </div>
+          <div *ngIf="template?.variables?.length" class="variables-container p-2 py-3 fs-12">
+            Variables
+            <button class="ms-2 py-1 px-2 fs-12" *ngFor="let variable of template?.variables" (click)="setVariableInBody(variable)">
+              {{variable}}
+            </button>
+          </div>
+          <div class="content-container"
+           [class.content-container-error]="parentForm.get('MailBody')!.touched && parentForm.get('MailBody')!.invalid"
+          >
+            <ngx-editor
+              [editor]="editor"
+              class="email-content rounded-0 w-100 border-0 fs-14"
+              formControlName="MailBody"
+              (keydown)="keyDownHandlerForBody($event)"
+              (mouseup)="mouseEventToTriggerRedirectButton($event)"
+              (mousedown)="mouseEventToTriggerRedirectButton($event)"
+              (keyup)="keyboardEventToTriggerRedirectButton()"
+              (keydown)="keyboardEventToTriggerRedirectButton()"
+            >
+              <div [style.left]=posLeft  [style.top]=posTop class="floating-button position-absolute mb-1" [class.invisible]="!showMenu" #redirectButton>
+                <button class="menu-button d-flex border-0 m-1 rounded" (click)="redirect()"><i class="bi bi-box-arrow-up-right"></i></button>
+              </div>
+            </ngx-editor>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

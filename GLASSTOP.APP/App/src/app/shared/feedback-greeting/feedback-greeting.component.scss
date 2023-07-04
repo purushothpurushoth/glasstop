@@ -1,0 +1,36 @@
+@import "./../../../scss/colors.scss";
+
+.submit-btn {
+  background: $glasstop-green;
+  color: white;
+  border: none;
+}
+
+.border-blue {
+  border: 1.5px solid $icon-blue;
+}
+
+.color-blue {
+  color: $icon-blue;
+}
+
+input,
+textarea {
+  background: transparent;
+  border: none;
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+textarea {
+  min-height: 160px;
+}
+
+.disabled {
+  opacity: 0.6;
+}
+
+.invalid {
+  border-color: $bright-red !important;
+}

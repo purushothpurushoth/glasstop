@@ -1,0 +1,11 @@
+C:\Users\admin\source\repos\Glasstop_Source\Glasstop\GLASSTOP.BATCHJOB\bin\Debug\GLASSTOP.BATCHJOB.exe.config
+C:\Users\admin\source\repos\Glasstop_Source\Glasstop\GLASSTOP.BATCHJOB\bin\Debug\GLASSTOP.BATCHJOB.exe
+C:\Users\admin\source\repos\Glasstop_Source\Glasstop\GLASSTOP.BATCHJOB\bin\Debug\GLASSTOP.BATCHJOB.pdb
+C:\Users\admin\source\repos\Glasstop_Source\Glasstop\GLASSTOP.BATCHJOB\bin\Debug\Newtonsoft.Json.dll
+C:\Users\admin\source\repos\Glasstop_Source\Glasstop\GLASSTOP.BATCHJOB\bin\Debug\Newtonsoft.Json.xml
+C:\Users\admin\source\repos\Glasstop_Source\Glasstop\GLASSTOP.BATCHJOB\obj\Debug\GLASSTOP.BATCHJOB.csproj.AssemblyReference.cache
+C:\Users\admin\source\repos\Glasstop_Source\Glasstop\GLASSTOP.BATCHJOB\obj\Debug\GLASSTOP.BATCHJOB.csproj.SuggestedBindingRedirects.cache
+C:\Users\admin\source\repos\Glasstop_Source\Glasstop\GLASSTOP.BATCHJOB\obj\Debug\GLASSTOP.BATCHJOB.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\Glasstop_Source\Glasstop\GLASSTOP.BATCHJOB\obj\Debug\GLASSTOP.BATCHJOB.csproj.CopyComplete
+C:\Users\admin\source\repos\Glasstop_Source\Glasstop\GLASSTOP.BATCHJOB\obj\Debug\GLASSTOP.BATCHJOB.exe
+C:\Users\admin\source\repos\Glasstop_Source\Glasstop\GLASSTOP.BATCHJOB\obj\Debug\GLASSTOP.BATCHJOB.pdb

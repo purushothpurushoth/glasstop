@@ -1,0 +1,136 @@
+<ng-container [ngSwitch]="modalContent.modalType" class="modal-size">
+  <ng-container *ngSwitchCase="'iframeModal'">
+    <div class="modal-header pb-2 modal-block-primary">
+      <span class="fs-16 modal-title">{{ title }}</span>
+      <button type="button" class="close btn-close pe-3 fs-12 pull-right" (click)="close()"></button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-text" *ngIf="isIframeVisible">
+        <iframe width="100%" height="450px" class="br-10" [src]="url | safe : 'url'" allowfullscreen></iframe>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngSwitchCase="'imageUploadModal'">
+    <div class="preview-container m-4">
+      <div class="row mb-4">
+        <div class="col-10 fs-20 fw-600">Preview</div>
+        <div class="col p-0 pr-2">
+          <i class="bi bi-arrow-counterclockwise rotate-button" (click)="rotate('left')"></i>
+        </div>
+        <div class="col p-0">
+          <i class="bi bi-arrow-clockwise rotate-button" (click)="rotate('right')"></i>
+        </div>
+      </div>
+      <div class="d-flex align-items-center p-0 cropper-container">
+        <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true" [aspectRatio]="4 / 4"
+          format="png" (imageCropped)="imageCropped($event)" [canvasRotation]="canvasRotation" class="p-0">
+        </image-cropper>
+      </div>
+      <div *ngIf="errorMessage" class="font-weight-bold text-danger">
+        <small>{{ errorMessage }}</small>
+      </div>
+      <div class="text-end">
+        <button class="me-3 mt-3 btn button-cancel fs-14 br-10" (click)="close()">
+          Cancel
+        </button>
+        <button class="btn btn-primary mt-3 fs-14 button-submit br-10" (click)="submit()" [disabled]="!isRequiredSize">
+          Confirm
+        </button>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngSwitchCase="'downloadSampleTemplate'">
+    <div class="pb-2 text-end">
+      <button type="button" class="close btn-close me-3 mt-3 fs-12" (click)="close()"></button>
+    </div>
+    <div class="text-center px-5 pb-5">
+      <div class="fs-24 fw-600 pb-3">{{ modalContent.title }}</div>
+      <div class="fs-14 fw-500 text-justify lh-26">{{ modalContent.content }}</div>
+      <button class="btn btn-primary mt-4 button-submit rounded-3 fs-14 fw-500" (click)="downloadSampleTemplate()">
+        <i class="bi bi-download fs-16 me-1"></i> {{ modalContent.trueButtonText }}
+      </button>
+    </div>
+  </ng-container>
+  <ng-container *ngSwitchCase="'uploadLoaderModal'">
+    <div class="upload-loader-container h-100 d-flex align-items-center justify-content-center">
+      <div class="loading-wrapper">
+        <div class="fw-bold fs-17 mb-4">
+          Processing {{modalContent.fileName}}
+        </div>
+        <div class="d-flex justify-content-center">
+          <div class="spinner-border" role="status"></div>
+        </div>
+        <div class="spinner-context position-relative w-100 text-center fw-bold">
+          {{loaderPercentage}}%
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngSwitchCase="'uploadEmployeesErrorModal'">
+    <div class="p-2 border border-secondary bg-white rounded-3 border-grey">
+      <glasstop-toast [type]="toast.type" [message]="toast.message" (disposeEvent)="dispose()" [isAutoHide]=false>
+      </glasstop-toast>
+      <div class="pt-3 pb-2 fs-13 fw-500">
+        Failed Records
+      </div>
+      <div class="container border border-bottom-0 bg-white rounded-top">
+        <div class="error-table-heading rounded-top row fw-600 px-2 py-3 fs-14">
+          <div class="col-3">
+            FirstName
+          </div>
+          <div class="col-3">
+            LastName
+          </div>
+          <div class="col-auto">
+            Email
+          </div>
+        </div>
+      </div>
+      <div class="error-data px-2 fs-12 border border-bottom-0 fw-500">
+        <div class="row p-0 py-3" *ngFor="let error of toast.errorData; index as j"
+          [ngClass]="{'border-bottom':toast.errorData!.length-1 > j}">
+          <div class="col-3 p-0 ps-4" [ngClass]="{'error-field': error.validationMessage.includes('First name')}"
+            [innerText]="error.firstName ? error.firstName : '-'" [class.ps-5]="!error.firstName">
+          </div>
+          <div class="col-3 p-0 ps-4" [ngClass]="{'error-field': error.validationMessage.includes('Last name')}"
+            [innerText]="error.lastName ? error.lastName : '-'" [class.ps-5]="!error.lastName">
+          </div>
+          <div class="col-auto p-0 ps-3" [ngClass]="{'error-field': error.validationMessage.includes('Email')}"
+            [innerText]="error.emailId ? error.emailId : '-'" [class.ps-5]="!error.emailId">
+          </div>
+        </div>
+      </div>
+      <div class="bottom border border-top-0 rounded-bottom"></div>
+    </div>
+  </ng-container>
+  <ng-container *ngSwitchCase="'uploadConfirmationModal'">
+    <div class="p-4">
+      <div class="fs-18 fw-600">
+        Are you sure you want to upload the file with below data?
+      </div>
+      <div class="filename-container fs-14">
+        File name: <span class="ps-1 fw-600">{{modalContent.fileName}}</span>
+      </div>
+      <glasstop-data-table 
+          [data]="modalContent.employeeList" 
+          [columns]="modalContent.tableColumns" 
+          [detail]="{
+              searchTotalCount: modalContent.employeeList.length,
+              id: 'campaignUserId',
+              listName: 'employee(s)'
+          }" 
+          [isStaticData]="true" 
+          [paginationId]="'paginationId-2'"
+      >
+      </glasstop-data-table>
+      <div class="text-end mt-3 fs-14">
+        <button class="me-3 btn button-cancel br-10" (click)="close()">
+          Cancel
+        </button>
+        <button class="btn btn-primary button-submit br-10" (click)="confirm()">
+          Confirm
+        </button>
+      </div>
+    </div>
+  </ng-container>
+</ng-container>

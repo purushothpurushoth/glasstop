@@ -1,0 +1,40 @@
+@import "./../../scss/colors.scss";
+
+.home-container {
+  background: $bg-grey;
+  height: auto;
+  .panel-container {
+    width: 60%;
+    height: 85%;
+  }
+}
+
+@media (max-width: 1600px) {
+  .panel-container {
+    width: 80% !important;
+  }
+}
+
+/***********************************MEDIA QUERY ************************/
+
+@media (min-width: 1100px) and (max-width: 1450px) {
+    .panel-container {
+      padding-bottom: 50px;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 1100px) {
+  .home-container{
+    overflow-y: scroll;
+    .panel-container {
+      width: 90% !important;
+      padding-bottom: 50px;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+    .panel-container {
+      padding-bottom: 50px;
+    }
+}

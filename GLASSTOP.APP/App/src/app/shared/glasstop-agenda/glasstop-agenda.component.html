@@ -1,0 +1,65 @@
+<div class="agenda-panel-container h-100 p-5">
+  <div class="mb-2">
+    <div class="lh-10 fs-12">3/3</div>
+    <p class="heading fs-22 fw-bold">
+      {{ user?.firstName || "Hi" }}, {{user?.companyName || "your company" }} has a
+      <glasstop-star-rating
+        class="d-inline-block"
+        [ratings]="currentRating"
+        [totalRatings]="5"
+        [color]="'#31a927'"
+      ></glasstop-star-rating>
+      rating on
+      <span class="rating-color"> Glassdoor</span>
+    </p>
+  </div>
+
+  <div class="header fs-24 text-center fw-bold p-3">
+    Here’s the safest way to boost your ratings 🚀
+  </div>
+  <div class="row h-100 p-5 text-center middle-container">
+    <div class="col-4 position-relative">
+      <div class="icon-wrapper"><i class="bi bi-envelope-fill fs-24"></i></div>
+      <div class="fs-16 fw-bold p-3">Step 1 : Send Personalised Emails</div>
+      <p class="color-grey fs-15">
+        Run a personalised email campaign asking all your employees to leave
+        feedback
+      </p>
+      <div class="one-to-two-arrow position-absolute">
+        <img [src]="leftToRightUpArrow" alt="Left to Right Up Arrow" />
+      </div>
+    </div>
+    <div class="col-4 position-relative">
+      <div class="icon-wrapper">
+        <i class="bi bi-rocket-takeoff-fill fs-24"></i>
+      </div>
+      <div class="fs-16 fw-bold p-3">Step 2: Superstar & Champions reviews</div>
+      <p class="color-grey fs-15">
+        Select the best reviews & ask these champions to leave the same feedback
+        on Glassdoor. Easy-peasy!
+      </p>
+      <div class="two-to-three-arrow position-absolute">
+        <img [src]="leftToRightDownArrow" alt="Right Arrow" />
+      </div>
+    </div>
+    <div class="col-4 step-three-container">
+      <div class="icon-wrapper">
+        <i class="bi bi-hand-thumbs-down-fill fs-24"></i>
+      </div>
+      <div class="fs-16 fw-bold p-3">Step 3: Angry birds Reviews</div>
+      <p class="color-grey fs-15">
+        Review -ve comments & connect with these employees instantly to address
+        issues internally.
+      </p>
+    </div>
+  </div>
+  <div class="row button-section">
+    <button
+      type="button"
+      class="col-auto mx-auto btn btn-primary fs-14 px-4 py-2"
+      [routerLink]="'../campaign-email-template'"
+    >
+      Get started with my employee feedback campaign
+    </button>
+  </div>
+</div>

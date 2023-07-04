@@ -1,0 +1,49 @@
+@import "./../../../scss/colors.scss";
+
+.campaign-card {
+  background: white;
+  border-color: $whitish-blue;
+  .title-container {
+    .dropdown-toggle::after {
+      display: none;
+    }
+    .form-check-input {
+      height: 25px;
+      width: 45px;
+      background-color: $orange;
+      border: none;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='white'/%3e%3c/svg%3e");
+      &:checked {
+        background-color: $icon-blue;
+      }
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+  .progress-container {
+    border-color: $whitish-yellow;
+    background: $whitish-light-yellow;
+    .progress {
+      height: 10px;
+    }
+  }
+  .insights-container {
+    border-color: $whitish-blue;
+  }
+  .ratings-container {
+    border-color: $whitish-green;
+  }
+}
+
+.br {
+  border: 1px solid $whitish-blue;
+}
+
+.lh-30 {
+  line-height: 30px;
+}
+
+.lh-35 {
+  line-height: 35px;
+}
